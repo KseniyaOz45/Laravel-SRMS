@@ -1,0 +1,68 @@
+#service-card-body {
+}
+
+.service-card-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+@media (max-width: 300px) {
+  #service-details-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 300px) {
+  #service-details-container {
+    padding: 20px;
+  }
+}
+
+.service-card-data-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.service-card-data-item {
+  color: var(--bs-secondary);
+}
+
+.service-image {
+  width: 100%;
+  height: auto;
+}
+
+#service-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  #nav-sidebar.hidden-sidebar {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #show-hide-sidebar {
+    display: none !important;
+  }
+}
+
+.actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+#header_404 {
+  font-size: 56px;
+}
+

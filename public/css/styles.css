@@ -1,0 +1,280 @@
+.service-card-link {
+  text-decoration: none;
+}
+
+#service-card-body {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card-image {
+  width: 100%;
+  height: auto;
+}
+
+#search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  #search-services-form {
+    flex-direction: column;
+    align-items: initial;
+  }
+}
+
+#search-services-form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+#user-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#personal-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#profile-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  align-self: center;
+}
+
+#search-services-container {
+  background-color: var(--bs-light);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--bs-dark-bg-subtle);
+}
+
+#user-profile-container {
+  background-color: var(--bs-light);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--bs-dark-bg-subtle);
+  gap: 10px;
+}
+
+#personal-profile-container {
+  background-color: var(--bs-light);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--bs-dark-bg-subtle);
+  gap: 10px;
+}
+
+#personal-schedule-container {
+  background-color: var(--bs-light);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--bs-dark-bg-subtle);
+  gap: 10px;
+}
+
+#reservation-details-container {
+  background-color: var(--bs-light);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--bs-dark-bg-subtle);
+  gap: 10px;
+}
+
+.nav-sidebar-link-container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.nav-sidebar-link-container:hover {
+  background-color: var(--bs-light-border-subtle);
+}
+
+.nav-sidebar-link {
+  text-decoration: none;
+  color: var(--bs-dark);
+}
+
+.fit-cover {
+  object-fit: cover;
+}
+
+#service-details-container {
+  background-color: var(--bs-light);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--bs-dark-bg-subtle);
+  gap: 10px;
+}
+
+@media (max-width: 360px) {
+  #service-details-container {
+    padding: 20px;
+  }
+}
+
+.reservation-form-item-container {
+  width: 100%;
+}
+
+#reservation-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+#reservation-comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#greetings-label {
+  margin-right: 10px;
+}
+
+/* По умолчанию: скрыт сайдбар и видна кнопка */
+
+#nav-sidebar {
+  width: 100%;
+  height: auto;
+  background-color: var(--bs-light);
+  border-radius: 10px;
+  border: 1px solid var(--bs-dark-bg-subtle);
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#show-hide-sidebar {
+  display: inline-block;
+}
+
+/* Если сайдбар не скрыт — показать его (на малых экранах по нажатию кнопки) */
+
+#nav-sidebar:not(.hidden-sidebar) {
+  display: block;
+}
+
+/* На экранах от 768px и выше: сайдбар всегда видим, кнопка скрыта */
+
+@media (min-width: 768px) {
+  #nav-sidebar {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #nav-sidebar.hidden-sidebar {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #show-hide-sidebar {
+    display: none !important;
+  }
+}
+
+/* На экранах 576px и меньше: сайдбар скрыт, кнопка видима */
+
+@media (max-width: 576px) {
+  #nav-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  #nav-sidebar:not(.hidden-sidebar) {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  #show-hide-sidebar {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 576px) {
+  .content-with-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #search-services-form {
+    flex-direction: column;
+    align-items: initial;
+  }
+}
+
+@media (max-width: 576px) {
+  #personal-schedule-container {
+    padding: 20px;
+  }
+}
+
+.export-schedule-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.404_header {
+  font-size: 46px;
+}
+

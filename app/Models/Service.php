@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class ServiceType extends Model
+class Service extends Model
 {
     //
-    protected $table = 'service_types';
-    protected $fillable = ['name'];
+    protected $table = 'services';
+    protected $fillable = ['name', 'description', 'duration', 'price', 'image', 'need_personal'];
 
     public static function boot()
     {

@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ServiceResource\Pages;
 use App\Filament\Resources\ServiceResource\RelationManagers;
 use App\Models\Service;
+use App\Models\ServiceType;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -34,6 +35,11 @@ class ServiceResource extends Resource
 
                 Textarea::make('description')->required(),
 
+                Select::make('service_type_id')->options(ServiceType::all()->pluck('name', 'id'))
+                    ->label('Type')
+                    ->native(false)
+                    ->required(),
+
                 Textinput::make('duration')->numeric()->minValue(5)->required(),
                 TextInput::make('price')->numeric('decimal')->required(),
 
@@ -57,8 +63,10 @@ class ServiceResource extends Resource
             ->columns([
                 //
                 TextColumn::make('name')->searchable()->sortable()->label('Name'),
+                TextColumn::make('service_type.name')->searchable()->sortable()->label('Type'),
                 TextColumn::make('duration')->sortable()->label('Duration'),
                 TextColumn::make('price')->sortable()->label('Price'),
+                TextColumn::make('need_personal')->sortable()->label('Need Personal'),
                 ImageColumn::make('image')->label('Image'),
             ])
             ->filters([

@@ -100,41 +100,36 @@
     <section id="testimonials">
         <div class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000" id="carousel-t">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="col-9 text-center mx-auto testimonial-content"><img class="rounded-circle" src="assets/img/Testimonial%20male%20white.svg" width="100">
-                        <p class="text-center rating">5&nbsp;<i class="fa fa-star"></i></p>
-                        <p class="text-center"><em>"Lorem ipsum dolor sit amet, nec cu omnium ponderum instructior, eligendi gubergren cotidieque te eam. Sed ceteros salutatus definiebas eu, ut modo argumentum reprimique quo. Per te convenire facilisis. Eu vel noster scaevola molestiae.&nbsp;Lorem ipsum dolor sit amet, nec cu omnium ponderum instructior, eligendi gubergren cotidieque te eam. Sed ceteros salutatus definiebas eu, ut modo argumentum reprimique quo. Per te convenire facilisis. Eu vel noster scaevola molestiae."</em><br></p>
-                        <p class="signature">John D.</p>
-                        <p class="text-center date">April 21, 2014<br></p>
+
+                @foreach($randomTestimonials as $index => $testimonial)
+                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                        <div class="col-9 offset-xl-1 text-center mx-auto testimonial-content">
+                            <img class="rounded-circle" src="{{ $testimonial->client->avatar }}" width="100">
+                            <p class="text-center rating">{{ $testimonial->rating }}&nbsp;<i class="fa fa-star"></i></p>
+                            <p class="text-center"><em>"{{ $testimonial->text }}"</em><br></p>
+                            <p class="signature">{{ $testimonial->client->name }}.</p>
+                            <p class="text-center date">{{ $testimonial->created_at }}<br></p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-9 offset-xl-1 text-center mx-auto testimonial-content"><img class="rounded-circle" src="assets/img/Testimonial%20female%20white.svg" width="100">
-                        <p class="text-center rating">5&nbsp;<i class="fa fa-star"></i></p>
-                        <p class="text-center"><em>"Lorem ipsum dolor sit amet, nec cu omnium ponderum instructior, eligendi gubergren cotidieque te eam. Sed ceteros salutatus definiebas eu, ut modo argumentum reprimique quo. Per te convenire facilisis. Eu vel noster scaevola molestiae.&nbsp;Lorem ipsum dolor sit amet, nec cu omnium ponderum instructior, eligendi gubergren cotidieque te eam. Sed ceteros salutatus definiebas eu, ut modo argumentum reprimique quo. Per te convenire facilisis. Eu vel noster scaevola molestiae."</em><br></p>
-                        <p class="signature">Jane D.</p>
-                        <p class="text-center date">April 21, 2014<br></p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-9 offset-xl-1 text-center mx-auto testimonial-content"><img class="rounded-circle" src="assets/img/Testimonial%20male%20blue.svg" width="100">
-                        <p class="text-center rating">5&nbsp;<i class="fa fa-star"></i></p>
-                        <p class="text-center"><em>"Lorem ipsum dolor sit amet, nec cu omnium ponderum instructior, eligendi gubergren cotidieque te eam. Sed ceteros salutatus definiebas eu, ut modo argumentum reprimique quo. Per te convenire facilisis. Eu vel noster scaevola molestiae.</em><br></p>
-                        <p class="signature">Jane D.</p>
-                        <p class="text-center date">April 21, 2014<br></p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-9 offset-xl-1 text-center mx-auto testimonial-content"><img class="rounded-circle" src="assets/img/Testimonial%20female%20blue.svg" width="100">
-                        <p class="text-center rating">5&nbsp;<i class="fa fa-star"></i></p>
-                        <p class="text-center"><em>"Lorem ipsum dolor sit amet, nec cu omnium ponderum instructior, eligendi gubergren cotidieque te eam. Sed ceteros salutatus definiebas eu, ut modo argumentum reprimique quo. Per te convenire facilisis. Eu vel noster scaevola molestiae.&nbsp;Lorem ipsum dolor sit amet, nec cu omnium ponderum instructior, eligendi gubergren cotidieque te eam.</em><br></p>
-                        <p class="signature">Jane D.</p>
-                        <p class="text-center date">April 21, 2014<br></p>
-                    </div>
-                </div>
+                @endforeach
             </div>
-            <div><a class="carousel-control-prev" href="#carousel-t" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-t" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
-            <div class="carousel-indicators"><button type="button" data-bs-target="#carousel-t" data-bs-slide-to="0" class="active"></button> <button type="button" data-bs-target="#carousel-t" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel-t" data-bs-slide-to="2"></button> <button type="button" data-bs-target="#carousel-t" data-bs-slide-to="3"></button></div>
+            <div>
+                <a class="carousel-control-prev" href="#carousel-t" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-t" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carousel-t" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carousel-t" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carousel-t" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#carousel-t" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#carousel-t" data-bs-slide-to="4"></button>
+            </div>
         </div>
     </section>
     <section id="pricing">

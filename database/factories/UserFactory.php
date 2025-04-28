@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 /**
@@ -32,7 +33,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'role' => 'client',
             'phone' => $this->faker->phoneNumber(),
-            'avatar' => $this->faker->imageUrl(300, 300,'people'),
+            'avatar' => 'https://i.pravatar.cc/300?u=' . $this->faker->unique()->uuid,
         ];
 
     }

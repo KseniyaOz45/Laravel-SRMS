@@ -34,7 +34,11 @@ class UserResource extends Resource
                 TextInput::make('password')->required()->label('Password'),
                 TextInput::make('phone')->required()->label('Phone'),
 
-                FileUpload::make('avatar')->required()->label('Avatar'),
+                FileUpload::make('avatar')
+                    ->disk('public')
+                    ->directory('user_avatars')
+                    ->required()
+                    ->label('Avatar'),
 
                 Select::make('role')->options([
                     'admin' => 'Admin',
